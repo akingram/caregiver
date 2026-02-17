@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Analytics - Where Compassion Meets Excellence in Caregiving</title>
+    <style>
+        /* Import premium fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #1e2b2c;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced color palette */
+        :root {
+            --primary-teal: #2C7A7B;
+            --primary-light: #E6F3F4;
+            --primary-soft: #B8D9DA;
+            --accent-green: #9BB8B3;
+            --soft-green: #F0F7F4;
+            --warm-gray: #F9F7F5;
+            --pure-white: #FFFFFF;
+            --text-dark: #1e2b2c;
+            --text-soft: #4A5C5D;
+            --text-light: #6B7C7D;
+            --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.02);
+            --shadow-sm: 0 4px 20px rgba(44, 122, 123, 0.08);
+            --shadow-md: 0 8px 30px rgba(44, 122, 123, 0.12);
+            --shadow-lg: 0 20px 50px rgba(44, 122, 123, 0.15);
+            --shadow-hover: 0 30px 60px rgba(44, 122, 123, 0.2);
+            --border-radius-sm: 16px;
+            --border-radius: 24px;
+            --border-radius-lg: 32px;
+            --border-radius-xl: 40px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Typography enhancements */
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary-teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--accent-green));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        h2:hover:after {
+            width: 120px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-soft);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(44, 122, 123, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-green));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transform: rotate(45deg);
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(90deg);
+        }
+
+        .logo span {
+            background: var(--primary-light);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: var(--primary-teal);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 1rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-teal);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:before {
+            width: 100%;
+        }
+
+        .nav-links .book-btn {
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-green));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            box-shadow: var(--shadow-sm);
+            border: none;
+        }
+
+        .nav-links .book-btn:before {
+            display: none;
+        }
+
+        .nav-links .book-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background: linear-gradient(135deg, var(--accent-green), var(--primary-teal));
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #f8fcfc 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            background: var(--primary-light);
+            color: var(--primary-teal);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-soft);
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-image-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 60%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mask-image: linear-gradient(to left, transparent, black 30%);
+            animation: scaleIn 1.5s ease;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-soft);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-green));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover:before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-teal);
+            color: var(--primary-teal);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:before {
+            background: rgba(44, 122, 123, 0.1);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--pure-white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(44, 122, 123, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--accent-green));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card:hover:before {
+            transform: scaleX(1);
+        }
+
+        /* Grid layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Step cards */
+        .step-card {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-light), var(--soft-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            transition: var(--transition);
+        }
+
+        .step-card:hover .step-number {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-green));
+            color: white;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--soft-green), var(--primary-light));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+        }
+
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 4px solid var(--primary-teal);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .testimonial-quote:before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-teal);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-teal);
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-role {
+            color: var(--text-soft);
+            font-size: 0.9rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            aspect-ratio: 1;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .gallery-item:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 122, 123, 0.9), rgba(155, 184, 179, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Booking Form */
+        .booking-form {
+            background: var(--pure-white);
+            padding: 3.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(44, 122, 123, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #eef3f4;
+            border-radius: var(--border-radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--warm-gray);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            background: var(--pure-white);
+            box-shadow: 0 0 0 4px rgba(44, 122, 123, 0.1);
+        }
+
+        /* Success message */
+        .success-message {
+            background: linear-gradient(135deg, var(--soft-green), #ffffff);
+            color: var(--primary-dark);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            display: none;
+            border-left: 6px solid var(--primary-teal);
+            box-shadow: var(--shadow-md);
+            animation: slideIn 0.5s ease;
+        }
+
+        .success-message.show {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .success-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e2b2c, #1a2425);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--primary-soft);
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-contact-item i {
+            color: var(--primary-soft);
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-teal);
+            background: var(--primary-light);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .grid-3, .grid-2, .form-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-image-container {
+                display: none;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .booking-form {
+                padding: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            animation: scaleIn 0.4s ease;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Page visibility */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Values grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--pure-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-light), var(--soft-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary-teal);
+            transition: var(--transition);
+        }
+
+        .value-item:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-green));
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" data-page="home">
+                <div class="logo-icon">❤️</div>
+                Care Analytics
+                <span>Since 2020</span>
+            </a>
+            <div class="nav-links">
+                <a href="#" data-page="home">Home</a>
+                <a href="#" data-page="about">About Us</a>
+                <a href="#" data-page="gallery">Gallery</a>
+                <a href="#" data-page="booking" class="book-btn">Book Care Now</a>
+                <a href="#" data-page="contact">Contact</a>
+            </div>
+            <div class="mobile-menu-btn">☀️</div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-image-container">
+                <img src="https://images.pexels.com/photos/7551612/pexels-photo-7551612.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Compassionate caregiver with elderly woman" class="hero-image">
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">Trusted by 5000+ Families</div>
+                    <h1>Compassionate Care When You Need It Most</h1>
+                    <p>Describe your care needs and be connected with exceptional caregivers who bring comfort, dignity, and joy to every moment.</p>
+                    <div>
+                        <a href="#" class="btn" data-page="booking">Book Us Now</a>
+                        <a href="#" class="btn btn-outline" data-page="about">Learn More</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5000+</div>
+                            <div class="stat-label">Happy Families</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section>
+            <div class="container">
+                <h2 style="text-align: center; display: block;">How It Works</h2>
+                <p class="section-subtitle" style="text-align: center; margin-left: auto; margin-right: auto;">Three simple steps to begin your journey with compassionate care</p>
+                
+                <div class="grid-3">
+                    <div class="card step-card">
+                        <div class="step-number">01</div>
+                        <h3>Tell Us Your Story</h3>
+                        <p>Share your care needs, preferences, and schedule through our simple booking form. Every detail helps us find your perfect match.</p>
+                    </div>
+                    <div class="card step-card">
+                        <div class="step-number">02</div>
+                        <h3>Meet Your Caregiver</h3>
+                        <p>We carefully select and introduce you to caregivers who match your personality, needs, and expectations for a perfect fit.</p>
+                    </div>
+                    <div class="card step-card">
+                        <div class="step-number">03</div>
+                        <h3>Begin Your Journey</h3>
+                        <p>Start receiving personalized care with ongoing support from our team. We're always here to ensure your complete satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 style="text-align: center; display: block; color: var(--text-dark);">What Families Say About Us</h2>
+                <p class="section-subtitle" style="text-align: center; margin-left: auto; margin-right: auto;">Real stories from families who found comfort and peace of mind with Care Analytics</p>
+                
+                <div class="grid-3">
+                    <div class="testimonial-card">
+                        <img src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sarah Johnson" class="testimonial-image">
+                        <div class="testimonial-quote">
+                            The caregiver matched with my mother became like family. Her compassion and professionalism gave us peace of mind we never thought possible.
+                        </div>
+                        <div class="testimonial-author">Sarah Johnson</div>
+                        <div class="testimonial-role">Daughter of Margaret, 84</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Michael Chen" class="testimonial-image">
+                        <div class="testimonial-quote">
+                            After my father's surgery, we needed someone special. Care Analytics provided a nurse who was not just skilled but genuinely caring.
+                        </div>
+                        <div class="testimonial-author">Michael Chen</div>
+                        <div class="testimonial-role">Family Caregiver</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Patricia Adams" class="testimonial-image">
+                        <div class="testimonial-quote">
+                            At 78, I wanted to maintain my independence. My caregiver respects my routines while providing the support I need. I couldn't be happier.
+                        </div>
+                        <div class="testimonial-author">Patricia Adams</div>
+                        <div class="testimonial-role">Client</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about" class="page">
+        <section style="padding-top: 4rem;">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <span class="hero-badge">Our Story</span>
+                        <h2>Redefining Caregiving With Heart & Excellence</h2>
+                        <p style="font-size: 1.2rem; color: var(--text-soft); margin-bottom: 2rem;">Care Analytics was born from a simple observation: families deserve better when seeking care for their loved ones.</p>
+                        <p>Founded in 2020 by a team of healthcare professionals and technologists, we've built a platform that combines rigorous caregiver screening with personalized matching. We believe that exceptional care happens when skills meet compassion, and when caregivers truly understand the unique needs of each family.</p>
+                        <p>Today, we're proud to serve thousands of families across the country, providing peace of mind through quality care.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/7551674/pexels-photo-7551674.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Care team meeting" style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+
+                <div style="margin: 6rem 0;">
+                    <h2 style="text-align: center; display: block;">Our Core Values</h2>
+                    <p class="section-subtitle" style="text-align: center; margin-left: auto; margin-right: auto;">The principles that guide everything we do</p>
+                    
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">❤️</div>
+                            <h3>Compassion First</h3>
+                            <p>Every interaction is rooted in genuine empathy and understanding of each family's unique journey.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🤝</div>
+                            <h3>Unwavering Trust</h3>
+                            <p>We build lasting relationships through complete transparency, reliability, and integrity.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">⭐</div>
+                            <h3>Clinical Excellence</h3>
+                            <p>Our caregivers undergo rigorous training and continuous education to provide the highest quality care.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🌿</div>
+                            <h3>Dignity & Respect</h3>
+                            <p>We honor the individuality of every person we serve, preserving independence and self-worth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2" style="background: var(--primary-light); border-radius: var(--border-radius-lg); padding: 3rem; margin: 4rem 0;">
+                    <div>
+                        <h2 style="color: var(--text-dark);">Our Quality Standards</h2>
+                        <p style="font-size: 1.1rem; margin-bottom: 2rem;">Every caregiver in our network is thoroughly vetted through our 5-step screening process:</p>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                                <span style="color: var(--primary-teal); font-size: 1.5rem;">✓</span>
+                                <strong>Comprehensive background checks</strong> including criminal history and driving records
+                            </li>
+                            <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                                <span style="color: var(--primary-teal); font-size: 1.5rem;">✓</span>
+                                <strong>Professional certifications</strong> and continuous skills assessment
+                            </li>
+                            <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                                <span style="color: var(--primary-teal); font-size: 1.5rem;">✓</span>
+                                <strong>Personality & empathy evaluation</strong> through behavioral interviews
+                            </li>
+                            <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                                <span style="color: var(--primary-teal); font-size: 1.5rem;">✓</span>
+                                <strong>Reference checks</strong> with previous employers and families
+                            </li>
+                            <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                                <span style="color: var(--primary-teal); font-size: 1.5rem;">✓</span>
+                                <strong>Ongoing performance monitoring</strong> and client feedback reviews
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/7551660/pexels-photo-7551660.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Caregiver with client" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery Page -->
+    <div id="gallery" class="page">
+        <section style="padding-top: 4rem;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <span class="hero-badge">Our Gallery</span>
+                    <h2 style="display: block;">Moments of Care & Connection</h2>
+                    <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Genuine moments captured with our caregivers and the families they serve</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/7551612/pexels-photo-7551612.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/7551612/pexels-photo-7551612.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caregiver helping elderly woman with a smile">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/7551674/pexels-photo-7551674.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/7551674/pexels-photo-7551674.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Care team discussing patient care">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/7551660/pexels-photo-7551660.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/7551660/pexels-photo-7551660.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caregiver reading to elderly woman">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Nurse holding elderly patient's hand">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/7551688/pexels-photo-7551688.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/7551688/pexels-photo-7551688.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caregiver and client walking in garden">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/7551696/pexels-photo-7551696.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/7551696/pexels-photo-7551696.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caregiver preparing meal with client">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caregiver and elderly woman sharing tea">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caregiver assisting with medication">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        <img src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Happy moment between caregiver and client">
+                        <div class="gallery-overlay">View Full Image</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Booking Page -->
+    <div id="booking" class="page">
+        <section style="padding-top: 4rem;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <span class="hero-badge">Start Your Journey</span>
+                    <h2 style="display: block;">Book Your Care</h2>
+                    <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Tell us about your needs and we'll match you with the perfect caregiver within 24 hours</p>
+                </div>
+
+                <div id="bookingSuccess" class="success-message">
+                    <div class="success-icon">✓</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Booking Confirmed!</h3>
+                        <p>Thank you for choosing Care Analytics. A confirmation has been sent to your email. Our care coordinator will contact you within 2 hours to discuss your needs.</p>
+                    </div>
+                </div>
+
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="careRecipient">Who needs care? *</label>
+                            <select id="careRecipient" required>
+                                <option value="">Select recipient</option>
+                                <option value="self">Myself</option>
+                                <option value="parent">My Parent</option>
+                                <option value="child">My Child</option>
+                                <option value="spouse">My Spouse/Partner</option>
+                                <option value="other">Other Family Member</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="situation">Tell us about your situation *</label>
+                        <textarea id="situation" rows="3" placeholder="Please describe your care needs, any medical conditions, and what you're looking for in a caregiver..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="careType">Type of Care Needed *</label>
+                            <select id="careType" required>
+                                <option value="">Select care type</option>
+                                <option value="elderly">Elderly Care / Companionship</option>
+                                <option value="post-surgery">Post-Surgery Recovery</option>
+                                <option value="disability">Disability Support</option>
+                                <option value="dementia">Dementia / Alzheimer's Care</option>
+                                <option value="palliative">Palliative / End-of-Life Care</option>
+                                <option value="respite">Respite Care for Family</option>
+                                <option value="specialized">Specialized Medical Care</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Your Location (City/Area) *</label>
+                            <input type="text" id="location" placeholder="e.g., Brooklyn, NY" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Preferred Start Date *</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Time *</label>
+                            <input type="time" id="time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Additional Notes (Optional)</label>
+                        <textarea id="notes" rows="2" placeholder="Any specific requirements, preferences, or questions..."></textarea>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn" style="padding: 1.2rem 4rem; font-size: 1.2rem;">Confirm Booking</button>
+                        <p style="margin-top: 1.5rem; color: var(--text-soft); font-size: 0.9rem;">✓ No payment required - we'll discuss pricing after matching</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section style="padding-top: 4rem;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <span class="hero-badge">Get In Touch</span>
+                    <h2 style="display: block;">We're Here to Help</h2>
+                    <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Our care team is available 24/7 to answer your questions and provide support</p>
+                </div>
+
+                <div class="grid-2" style="gap: 3rem;">
+                    <div>
+                        <div style="background: linear-gradient(135deg, var(--primary-light), var(--soft-green)); padding: 3rem; border-radius: var(--border-radius-lg);">
+                            <h3 style="margin-bottom: 2rem;">Contact Information</h3>
+                            
+                            <div style="margin-bottom: 2rem;">
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                    <div style="width: 50px; height: 50px; background: var(--primary-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📞</div>
+                                    <div>
+                                        <div style="font-weight: 600; color: var(--text-dark);">Call Us Anytime</div>
+                                        <a href="tel:+18005551234" style="font-size: 1.5rem; color: var(--primary-teal); text-decoration: none; font-weight: 600;">1-800-555-1234</a>
+                                        <p style="color: var(--text-soft);">24/7 Care Support Line</p>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div style="width: 50px; height: 50px; background: var(--primary-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">✉️</div>
+                                    <div>
+                                        <div style="font-weight: 600; color: var(--text-dark);">Email Us</div>
+                                        <a href="mailto:care@careanalytics.com" style="font-size: 1.2rem; color: var(--primary-teal); text-decoration: none;">care@careanalytics.com</a>
+                                        <p style="color: var(--text-soft);">Response within 2 hours</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 3rem;">
+                                <h4 style="margin-bottom: 1rem;">Office Hours</h4>
+                                <p>Monday - Friday: 8am - 8pm</p>
+                                <p>Saturday: 9am - 5pm</p>
+                                <p>Sunday: 10am - 4pm</p>
+                                <p style="margin-top: 1rem; font-weight: 600;">Emergency support available 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form id="contactForm" style="background: var(--pure-white); padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+                            <h3 style="margin-bottom: 2rem;">Send Us a Message</h3>
+                            
+                            <div class="form-group">
+                                <label for="contactName">Your Name *</label>
+                                <input type="text" id="contactName" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" placeholder="your@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPhone">Phone Number</label>
+                                <input type="tel" id="contactPhone" placeholder="(Optional)">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" rows="5" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">Care Analytics <span>❤️</span></div>
+                    <p>Providing compassionate, professional caregiving services to families since 2020. We match you with caregivers who truly understand and care.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#" data-page="home">Home</a>
+                    <a href="#" data-page="about">About Us</a>
+                    <a href="#" data-page="gallery">Gallery</a>
+                    <a href="#" data-page="booking">Book Care</a>
+                    <a href="#" data-page="contact">Contact</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Care Services</h4>
+                    <a href="#">Elderly Care</a>
+                    <a href="#">Post-Surgery Recovery</a>
+                    <a href="#">Dementia Care</a>
+                    <a href="#">Disability Support</a>
+                    <a href="#">Respite Care</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <span>📞</span>
+                        <a href="tel:+18005551234" style="color: rgba(255,255,255,0.7); text-decoration: none;">1-800-555-1234</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>✉️</span>
+                        <a href="mailto:care@careanalytics.com" style="color: rgba(255,255,255,0.7); text-decoration: none;">care@careanalytics.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>📍</span>
+                        <span>123 Care Street, Suite 100<br>New York, NY 10001</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Care Analytics. All rights reserved. | Compassionate care for every stage of life.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <script>
+        // Navigation
+        document.querySelectorAll('[data-page]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('data-page');
+                
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                document.getElementById(pageId).classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightboxImg').src = imageSrc;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Booking form submission
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                careRecipient: document.getElementById('careRecipient').value,
+                situation: document.getElementById('situation').value,
+                careType: document.getElementById('careType').value,
+                location: document.getElementById('location').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                notes: document.getElementById('notes').value
+            };
+
+            // Simulate email to user
+            console.log('📧 Sending confirmation to:', formData.email);
+            console.log('Subject: Your Care Analytics Booking Confirmation');
+            console.log(`Dear ${formData.fullName},\n\nThank you for booking with Care Analytics. We have received your request for ${formData.careType} care starting on ${formData.date} at ${formData.time}.\n\nA care coordinator will contact you within 2 hours to discuss your needs and introduce potential caregivers.\n\nWith gratitude,\nThe Care Analytics Team`);
+
+            // Simulate email to admin
+            console.log('📧 New Booking Notification to admin@careanalytics.com:');
+            console.log('New Care Request:', formData);
+
+            // Show success message
+            document.getElementById('bookingSuccess').classList.add('show');
+            
+            // Reset form
+            e.target.reset();
+
+            // Scroll to success message
+            document.getElementById('bookingSuccess').scrollIntoView({ behavior: 'smooth' });
+
+            // Hide success message after 15 seconds
+            setTimeout(() => {
+                document.getElementById('bookingSuccess').classList.remove('show');
+            }, 15000);
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const contactData = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                message: document.getElementById('contactMessage').value
+            };
+
+            console.log('Contact form submission:', contactData);
+            
+            alert('Thank you for reaching out! A member of our care team will respond within 24 hours.');
+            e.target.reset();
+        });
+
+        // Set minimum date for date picker to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            alert('📱 Mobile menu would open here - in production, implement a sliding navigation drawer with links to all pages.');
+        });
+
+        // Smooth scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add animation on scroll (simple implementation)
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.card, .value-item, .gallery-item');
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                if (position.top < window.innerHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
