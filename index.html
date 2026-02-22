@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Care Analytics — Compassionate Care When You Need It Most</title>
+<title>Alice Care Homes — Compassionate Care When You Need It Most</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -482,10 +482,12 @@ section{padding:88px 20px}
 .filter-btn.active,.filter-btn:hover{background:var(--teal);border-color:var(--teal);color:#fff}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .gallery-item{border-radius:var(--radius-md);overflow:hidden;position:relative;cursor:pointer}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
+.gallery-item .img-wrap{
+  overflow:hidden;width:100%;height:100%;border-radius:var(--radius-md);
+  background-size:cover;background-position:center;
+}
 .gallery-item.tall{grid-row:span 2}
 .gallery-item.wide{grid-column:span 2}
-.gallery-item .img-wrap{overflow:hidden;width:100%;height:100%;border-radius:var(--radius-md)}
 .gallery-item:not(.tall):not(.wide) .img-wrap{aspect-ratio:4/3}
 .gallery-item.tall .img-wrap{aspect-ratio:3/5}
 .gallery-item.wide .img-wrap{aspect-ratio:16/7}
@@ -496,7 +498,6 @@ section{padding:88px 20px}
   display:flex;align-items:flex-end;padding:18px;border-radius:var(--radius-md);
 }
 .gallery-item:hover .gallery-overlay{opacity:1}
-.gallery-item:hover img{transform:scale(1.06)}
 .gallery-overlay-text{
   color:#fff;font-size:.85rem;font-weight:600;
   display:flex;align-items:center;gap:8px;
@@ -722,24 +723,8 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
 .toast-title{font-weight:700;color:var(--text-primary);margin-bottom:2px}
 
 /* ═══════════════════════════════
-   IMAGE PLACEHOLDERS
-═══════════════════════════════ */
-.img-placeholder{
-  background:linear-gradient(135deg,var(--teal-pale),var(--sage-light));
-  display:flex;align-items:center;justify-content:center;
-  width:100%;height:100%;position:relative;overflow:hidden;
-}
-.img-placeholder svg{width:44px;height:44px;fill:none;stroke:var(--teal);stroke-width:1.5;opacity:.35}
-.img-placeholder::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.18) 50%,transparent 70%);
-  animation:shimmer 2.5s infinite;transform:translateX(-100%);
-}
-@keyframes shimmer{to{transform:translateX(200%)}}
-
-/* ═══════════════════
    SETUP BANNER
-═══════════════════ */
+═══════════════════════════════ */
 .setup-banner{
   position:fixed;bottom:0;left:0;right:0;z-index:9000;
   background:#1e293b;color:#fff;padding:14px 20px;
@@ -967,7 +952,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       <div class="logo-icon">
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       </div>
-      <span>Care<em>Analytics</em></span>
+      <span>Alice<em>Care Homes</em></span>
     </div>
     <div class="nav-links">
       <a href="#" class="active" id="nav-home" onclick="navigate('home');return false">Home</a>
@@ -1001,7 +986,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
     <div class="hero-deco"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge">Trusted by 2,000+ Families Nationwide</div>
+      <div class="hero-badge">Regulated by the Ministry of Health of Nigeria</div>
       <h1>Compassionate Care<br><em>When You Need It Most</em></h1>
       <p class="hero-sub">Describe your situation in a few words and our dedicated care team will connect you with the right caregiver — quickly, privately, and professionally.</p>
       <div class="hero-actions">
@@ -1089,38 +1074,38 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       <div class="section-header">
         <div class="section-label">What We Offer</div>
         <h2 class="section-title">Comprehensive Care Services</h2>
-        <p class="section-subtitle">Whether it's daily support or specialized medical care, we have the right professional for every need.</p>
+        <p class="section-subtitle">Our well-trained care support staff are committed to delivering standard support services in accordance with international practice and standards.</p>
       </div>
       <div class="services-grid">
         <div class="service-card scroll-anim">
           <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <h3>In-Home Companion Care</h3>
-          <p>Friendly, compassionate companionship that reduces isolation and supports daily living activities for seniors and those recovering at home.</p>
+          <h3>Elderly Care & Support</h3>
+          <p>Short-term and long-term support for elderly parents in need due to disabilities or old age, including daily living assistance and companionship.</p>
         </div>
         <div class="service-card scroll-anim">
           <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-          <h3>Medical & Nursing Care</h3>
-          <p>Qualified nurses and healthcare aides providing medication management, wound care, vital monitoring, and post-hospital support.</p>
+          <h3>Post-Hospital Care</h3>
+          <p>Professional support for hospital discharged patients needing post-hospital care to recover safely and comfortably at home.</p>
         </div>
         <div class="service-card scroll-anim">
           <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-          <h3>Overnight & Live-In Care</h3>
-          <p>Round-the-clock reassurance with a dedicated caregiver available throughout the night or as a live-in professional in your home.</p>
+          <h3>Pediatric Care</h3>
+          <p>Nurturing support for children living with disabilities, including autism and other complex needs, delivered by trained pediatric care specialists.</p>
         </div>
         <div class="service-card scroll-anim">
           <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          <h3>Dementia & Memory Care</h3>
-          <p>Specialized caregivers trained in dementia support, providing consistent, patient-centered care in a familiar environment.</p>
+          <h3>Daily Living Support</h3>
+          <p>Comprehensive assistance with daily routines and activities for persons living with disabilities, promoting independence and dignity.</p>
         </div>
         <div class="service-card scroll-anim">
           <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Pediatric & Child Care</h3>
-          <p>Nurturing support for children with disabilities or complex needs, delivered by trained pediatric care specialists.</p>
+          <h3>Respite Care Services</h3>
+          <p>Short-term relief for primary caregivers, ensuring your loved one continues to receive quality care while you take a well-deserved break.</p>
         </div>
         <div class="service-card scroll-anim">
           <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-          <h3>Transportation & Errands</h3>
-          <p>Safe, reliable transport to medical appointments, pharmacy pickups, grocery runs, and social outings.</p>
+          <h3>Excursions & Companionship</h3>
+          <p>Safe, engaging social outings and companionship that enrich the lives of our service users and reduce social isolation.</p>
         </div>
       </div>
     </div>
@@ -1143,7 +1128,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
             <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p>"After my father's stroke, I didn't know where to turn. Care Analytics matched us with Margaret within 24 hours. She's become part of our family. I can sleep at night knowing Dad is in safe hands."</p>
+          <p>"After my father's stroke, I didn't know where to turn. Alice Care Homes matched us with a caregiver within 24 hours. She's become part of our family. I can sleep at night knowing Dad is in safe hands."</p>
           <div class="testi-author">
             <div class="testi-avatar">SM</div>
             <div><div class="testi-name">Sarah Mitchell</div><div class="testi-role">Daughter of a care recipient</div></div>
@@ -1171,7 +1156,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
             <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg class="star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p>"I was recovering from hip surgery and needed help at home. The caregiver sent was patient, skilled, and incredibly kind. Care Analytics didn't just find me a carer — they found me a friend."</p>
+          <p>"I was recovering from hip surgery and needed help at home. The caregiver sent was patient, skilled, and incredibly kind. Alice Care Homes didn't just find me a carer — they found me a friend."</p>
           <div class="testi-author">
             <div class="testi-avatar">HL</div>
             <div><div class="testi-name">Helen Lawson</div><div class="testi-role">Post-surgery care recipient</div></div>
@@ -1207,22 +1192,20 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         <div>
           <div class="section-label">Our Story</div>
           <h1 class="section-title" style="max-width:100%">Care Built on Compassion and Trust</h1>
-          <p style="font-size:1rem;color:var(--text-secondary);line-height:1.9;margin-bottom:22px">Care Analytics was founded in 2018 by a team of healthcare professionals and family caregivers who experienced firsthand how difficult finding quality, reliable care could be during life's most vulnerable moments.</p>
-          <p style="font-size:.94rem;color:var(--text-muted);line-height:1.9;margin-bottom:28px">What began as a small network of vetted caregivers has grown into a trusted care platform serving thousands of families — yet we remain deeply personal. Every request is reviewed by a human being. Every match is made with care.</p>
+          <p style="font-size:1rem;color:var(--text-secondary);line-height:1.9;margin-bottom:22px">Alice Care Homes Limited is a compassionate care service provider with professional carers dedicated to supporting and improving the quality of life for challenged individuals and persons living with disabilities.</p>
+          <p style="font-size:.94rem;color:var(--text-muted);line-height:1.9;margin-bottom:28px">We provide personalized care solutions designed to meet the physical, emotional, and social needs of our service users in a safe, comfortable, and supportive environment in accordance with international practice and standard. Regulated by the Ministry of Health of Nigeria.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
             <span class="chip">Est. 2018</span>
             <span class="chip">500+ Caregivers</span>
-            <span class="chip">CQC Approved</span>
-            <span class="chip">ISO 27001 Certified</span>
+            <span class="chip">Ministry of Health</span>
+            <span class="chip">Human Rights Act</span>
           </div>
         </div>
         <div class="about-hero-img">
-          <div class="img-placeholder" style="width:100%;height:100%;min-height:260px">
-            <svg viewBox="0 0 80 80"><path d="M40 8C22.3 8 8 22.3 8 40s14.3 32 32 32 32-14.3 32-32S57.7 8 40 8zm0 8c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8zm0 44c-8 0-15.1-3.9-19.4-10C22 44 29.5 40 40 40s18 4 19.4 10C55.1 56.1 48 60 40 60z"/></svg>
-          </div>
+          <div class="img-wrap" style="width:100%;height:100%;min-height:260px;background-image:url('https://images.pexels.com/photos/7551610/pexels-photo-7551610.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center 30%;"></div>
           <div class="img-badge">
             <div class="img-badge-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="img-badge-text"><strong>CQC Registered</strong>Care Quality Commission</div>
+            <div class="img-badge-text"><strong>Ministry of Health</strong>Regulated by Nigeria</div>
           </div>
         </div>
       </div>
@@ -1238,14 +1221,14 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
           <h3 style="color:#fff;font-size:1.5rem;margin-bottom:13px">Our Mission</h3>
-          <p style="color:rgba(255,255,255,.82);line-height:1.85;font-size:.95rem">To make high-quality, compassionate care accessible to every family — removing barriers, reducing stress, and ensuring that vulnerable individuals receive the dignified, professional support they deserve, exactly when and where they need it most.</p>
+          <p style="color:rgba(255,255,255,.82);line-height:1.85;font-size:.95rem">To provide a plan activities, safety and delivery professional care services that enhance the well-being of our service users.</p>
         </div>
         <div style="background:var(--sage-light);border-radius:var(--radius-xl);padding:44px">
           <div style="width:50px;height:50px;background:#fff;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;box-shadow:var(--shadow-sm)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
           <h3 style="font-size:1.5rem;margin-bottom:13px;color:var(--text-primary)">Our Vision</h3>
-          <p style="color:var(--text-secondary);line-height:1.85;font-size:.95rem">A world where no family faces a care crisis alone. We envision Care Analytics as the most trusted care coordination platform — known not just for connecting families with caregivers, but for the warmth, precision, and humanity with which we do it.</p>
+          <p style="color:var(--text-secondary);line-height:1.85;font-size:.95rem">To add values to life where and when it needed with excellence service.</p>
         </div>
       </div>
     </div>
@@ -1257,7 +1240,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       <div class="section-header">
         <div class="section-label">What Drives Us</div>
         <h2 class="section-title">Our Core Values</h2>
-        <p class="section-subtitle">These aren't just words on a wall. They guide every decision, every match, every interaction.</p>
+        <p class="section-subtitle">Our well-trained care support staff prioritize respect for the core learning of diversity, beliefs, and principles of dignity, fairness, and equality.</p>
       </div>
       <div class="values-grid">
         <div class="value-card scroll-anim">
@@ -1267,38 +1250,37 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         </div>
         <div class="value-card scroll-anim">
           <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h4>Trust</h4>
-          <p>Families place their most precious loved ones in our care. We honour that trust through transparency, consistency, and accountability.</p>
+          <h4>Respect</h4>
+          <p>We honour diversity, beliefs, and protect individuals from abuse, including rights to life, liberty, freedom from torture, and expression.</p>
         </div>
         <div class="value-card scroll-anim">
           <div class="value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-          <h4>Professionalism</h4>
-          <p>Every caregiver in our network holds verified qualifications and undergoes rigorous training before being placed with a family.</p>
+          <h4>Integrity</h4>
+          <p>We uphold principles of dignity, fairness, and equality in all our interactions, fully understanding the Human Rights Act.</p>
         </div>
         <div class="value-card scroll-anim">
           <div class="value-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <h4>Excellence</h4>
-          <p>We never settle for adequate. We pursue outstanding care outcomes through continuous improvement, feedback, and innovation.</p>
+          <h4>Professionalism</h4>
+          <p>Every caregiver in our network is well-trained and committed to delivering standard support services to the highest quality.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VETTING PROCESS -->
+  <!-- OUR PARTNERS -->
   <section style="background:#fff">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">Quality Assurance</div>
-        <h2 class="section-title">How We Vet Every Caregiver</h2>
-        <p class="section-subtitle">Only 1 in 8 applicants makes it through our rigorous vetting process. Your family deserves nothing less.</p>
+        <div class="section-label">Collaboration</div>
+        <h2 class="section-title">Our Trusted Partners</h2>
+        <p class="section-subtitle">We work alongside respected institutions to provide comprehensive care.</p>
       </div>
-      <div class="vetting-steps">
-        <div class="vetting-item scroll-anim"><div class="vetting-num">1</div><div><h4>Enhanced Background Checks</h4><p>Every caregiver undergoes a comprehensive DBS check, including enhanced criminal record disclosures and reference verification from at least three previous employers.</p></div></div>
-        <div class="vetting-item scroll-anim"><div class="vetting-num">2</div><div><h4>Qualification Verification</h4><p>We independently verify all stated qualifications — nursing certificates, first aid training, dementia care certifications — with original documentation and awarding bodies.</p></div></div>
-        <div class="vetting-item scroll-anim"><div class="vetting-num">3</div><div><h4>In-Depth Interview & Assessment</h4><p>A structured interview with one of our senior care coordinators, including scenario-based assessments, soft skill evaluation, and cultural values alignment testing.</p></div></div>
-        <div class="vetting-item scroll-anim"><div class="vetting-num">4</div><div><h4>Supervised Trial Period</h4><p>All newly approved caregivers complete a supervised placement period before being matched independently, with ongoing performance reviews and family feedback integration.</p></div></div>
-        <div class="vetting-item scroll-anim"><div class="vetting-num">5</div><div><h4>Continuous Professional Development</h4><p>Mandatory annual retraining in areas including safeguarding, first aid, infection control, and care-specific upskilling keeps our team at the forefront of best practice.</p></div></div>
-        <div class="vetting-item scroll-anim"><div class="vetting-num">6</div><div><h4>Ongoing Quality Reviews</h4><p>Regular welfare checks, anonymous family feedback surveys, and periodic re-vetting ensure our standards never slip — for new or long-standing team members.</p></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:32px">
+        <span class="chip" style="font-size:.9rem;padding:8px 20px">Hospitals</span>
+        <span class="chip" style="font-size:.9rem;padding:8px 20px">Private Clinics</span>
+        <span class="chip" style="font-size:.9rem;padding:8px 20px">Physiotherapy Centers</span>
+        <span class="chip" style="font-size:.9rem;padding:8px 20px">Church & Mosque</span>
+        <span class="chip" style="font-size:.9rem;padding:8px 20px">Elders & Community Centre</span>
       </div>
     </div>
   </section>
@@ -1322,7 +1304,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
     <div class="container">
       <div class="section-label" style="margin:0 auto 14px">Visual Stories</div>
       <h1 class="section-title">Care in Every Moment</h1>
-      <p class="section-subtitle" style="margin:0 auto">A glimpse into the compassionate environments, dedicated professionals, and meaningful connections that define Care Analytics.</p>
+      <p class="section-subtitle" style="margin:0 auto">A glimpse into the compassionate environments, dedicated professionals, and meaningful connections that define Alice Care Homes.</p>
     </div>
   </div>
 
@@ -1337,86 +1319,49 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       </div>
 
       <div class="gallery-grid" id="galleryGrid">
+        <!-- Caregiver 1 - Female caregiver smiling with senior -->
         <div class="gallery-item tall" data-cat="caregivers" onclick="openLightbox(0)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#c8e6c9 0%,#a5d6a7 40%,#81c784 100%);width:100%;height:100%">
-              <svg viewBox="0 0 64 64" style="opacity:.2"><path d="M32 8C18.7 8 8 18.7 8 32s10.7 24 24 24 24-10.7 24-24S45.3 8 32 8zm0 8c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6zm0 32c-6 0-11.3-2.9-14.6-7.5C19 35.3 24.6 32 32 32s13 3.3 14.6 7.5C43.3 45.1 38 48 32 48z"/></svg>
-              <div style="position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,.92);border-radius:10px;padding:10px 14px">
-                <div style="font-size:.78rem;font-weight:700;color:var(--teal)">Nurse Maria T.</div>
-                <div style="font-size:.7rem;color:var(--text-muted)">Senior Care Specialist</div>
-              </div>
-            </div>
-          </div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/7551610/pexels-photo-7551610.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Nurse Maria T.</div></div>
         </div>
+        <!-- Care Moment 1 - Caregiver assisting senior with walker -->
         <div class="gallery-item" data-cat="moments" onclick="openLightbox(1)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#e0f2f1 0%,#b2dfdb 60%,#80cbc4 100%);width:100%;height:100%">
-              <svg viewBox="0 0 64 64" style="width:40px;opacity:.2;stroke:var(--teal);fill:none;stroke-width:2"><path d="M32 42c-5.5-4-16-11.5-16-20 0-8.8 7.2-16 16-16s16 7.2 16 16c0 8.5-10.5 16-16 20z"/></svg>
-            </div>
-          </div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/6646896/pexels-photo-6646896.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Afternoon Companionship</div></div>
         </div>
+        <!-- Environment 1 - Comfortable home care room -->
         <div class="gallery-item" data-cat="environment" onclick="openLightbox(2)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#fff8e1 0%,#ffe082 50%,#ffd54f 100%);width:100%;height:100%">
-              <svg viewBox="0 0 64 64" style="width:38px;opacity:.25;stroke:#f59e0b;fill:none;stroke-width:2"><path d="M8 32v22h12V38h8v16h12V32"/><path d="M4 34L32 8l28 26"/></svg>
-            </div>
-          </div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/1646807/pexels-photo-1646807.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Home Environment</div></div>
         </div>
+        <!-- Team 1 (wide) - Healthcare team meeting -->
         <div class="gallery-item wide" data-cat="team" onclick="openLightbox(3)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#e8f5e9 0%,#a5d6a7 50%,#66bb6a 100%);width:100%;height:100%">
-              <div style="display:flex;gap:12px;align-items:center;justify-content:center;padding:24px;flex-wrap:wrap">
-                <div style="width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:var(--teal);flex-shrink:0">CA</div>
-                <div style="font-size:.88rem;font-weight:700;color:var(--text-primary);text-align:center">Our dedicated coordination team — ready to help 7 days a week</div>
-              </div>
-            </div>
-          </div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/5214999/pexels-photo-5214999.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Care Coordination Team</div></div>
         </div>
+        <!-- Pediatric Moment - Child with caregiver -->
         <div class="gallery-item" data-cat="moments" onclick="openLightbox(4)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#fce4ec 0%,#f8bbd0 50%,#f48fb1 100%);width:100%;height:100%">
-              <svg viewBox="0 0 64 64" style="width:38px;opacity:.2;stroke:#ec4899;fill:none;stroke-width:2"><circle cx="32" cy="20" r="12"/><path d="M8 54c0-13.3 10.7-24 24-24s24 10.7 24 24"/></svg>
-            </div>
-          </div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/6010881/pexels-photo-6010881.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Pediatric Care</div></div>
         </div>
+        <!-- Medical Environment - Clean medical facility -->
         <div class="gallery-item" data-cat="environment" onclick="openLightbox(5)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#e3f2fd 0%,#90caf9 50%,#64b5f6 100%);width:100%;height:100%">
-              <svg viewBox="0 0 64 64" style="width:38px;opacity:.2;stroke:#3b82f6;fill:none;stroke-width:2"><rect x="4" y="16" width="56" height="40" rx="4"/><path d="M4 28h56M16 16V8M48 16V8"/></svg>
-            </div>
-          </div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/4021810/pexels-photo-4021810.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Medical Environment</div></div>
         </div>
+        <!-- Caregiver 2 tall - Male nurse with senior -->
         <div class="gallery-item tall" data-cat="caregivers" onclick="openLightbox(6)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#d7ccc8 0%,#bcaaa4 40%,#a1887f 100%);width:100%;height:100%">
-              <div style="position:absolute;bottom:16px;left:16px;right:16px;background:rgba(255,255,255,.93);border-radius:10px;padding:10px 14px">
-                <div style="font-size:.78rem;font-weight:700;color:var(--teal)">Dr. Joseph A.</div>
-                <div style="font-size:.7rem;color:var(--text-muted)">Registered Nurse, RN</div>
-              </div>
-            </div>
-          </div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Dr. Joseph A.</div></div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/5699448/pexels-photo-5699448.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
+          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Dr. Joseph A., RN</div></div>
         </div>
+        <!-- Memory Care Moment - Senior with caregiver doing activity -->
         <div class="gallery-item" data-cat="moments" onclick="openLightbox(7)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#e8eaf6 0%,#c5cae9 50%,#9fa8da 100%);width:100%;height:100%">
-              <svg viewBox="0 0 64 64" style="width:38px;opacity:.2;stroke:#6366f1;fill:none;stroke-width:2"><path d="M32 8c-8.8 0-16 7.2-16 16 0 6 3.3 11.3 8.2 14.2L32 56l7.8-17.8C44.7 35.3 48 30 48 24c0-8.8-7.2-16-16-16z"/></svg>
-            </div>
-          </div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/6646901/pexels-photo-6646901.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Memory Care</div></div>
         </div>
+        <!-- Team 2 - Caregivers training session -->
         <div class="gallery-item" data-cat="team" onclick="openLightbox(8)" tabindex="0">
-          <div class="img-wrap">
-            <div class="img-placeholder" style="background:linear-gradient(145deg,#e0f7fa 0%,#80deea 50%,#4dd0e1 100%);width:100%;height:100%">
-              <svg viewBox="0 0 64 64" style="width:38px;opacity:.2;stroke:var(--teal);fill:none;stroke-width:2"><path d="M20 20c0-6.6 5.4-12 12-12s12 5.4 12 12-5.4 12-12 12-12-5.4-12-12z"/><path d="M8 56c0-11 10.7-20 24-20s24 9 24 20"/></svg>
-            </div>
-          </div>
+          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/6646916/pexels-photo-6646916.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
           <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Team Training Day</div></div>
         </div>
       </div>
@@ -1497,15 +1442,13 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
               <label>Type of Care Needed <span class="required">*</span></label>
               <select class="form-control" required id="bk-careType">
                 <option value="" disabled selected>Select care type...</option>
-                <option>Companion / Personal Care</option>
-                <option>Medical / Nursing Care</option>
-                <option>Dementia & Memory Care</option>
-                <option>Post-Surgery Recovery</option>
-                <option>Pediatric Care</option>
-                <option>Overnight / Live-In Care</option>
-                <option>Respite Care</option>
-                <option>Transportation & Errands</option>
-                <option>Palliative / End of Life Care</option>
+                <option>Elderly Care & Support</option>
+                <option>Post-Hospital Care</option>
+                <option>Pediatric Care (Autism etc.)</option>
+                <option>Daily Living Support</option>
+                <option>Respite Care Services</option>
+                <option>Companionship</option>
+                <option>Excursions</option>
                 <option>Not Sure – Need Guidance</option>
               </select>
             </div>
@@ -1598,7 +1541,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
     <div class="success-modal">
       <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>Request Received!</h3>
-      <p>Thank you for reaching out to Care Analytics. Your request has been received and our care team is already reviewing it.</p>
+      <p>Thank you for reaching out to Alice Care Homes. Your request has been received and our care team is already reviewing it.</p>
       <div class="success-detail" id="successDetail">A confirmation has been sent to your email address.</div>
       <p style="font-size:.86rem;color:var(--text-muted);margin-bottom:22px;line-height:1.75">A dedicated care coordinator will contact you <strong>within 2 hours</strong> to discuss your needs personally.</p>
       <button class="success-close" onclick="closeSuccess()">Back to Home</button>
@@ -1629,7 +1572,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         </div>
         <div class="contact-info-card scroll-anim">
           <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="ci-label">Email Us</div><div class="ci-value"><a href="mailto:hello@careanalytics.com">hello@careanalytics.com</a></div><div class="ci-note">We respond within 4 hours on business days</div></div>
+          <div><div class="ci-label">Email Us</div><div class="ci-value"><a href="mailto:hello@alicecarehomes.com">hello@alicecarehomes.com</a></div><div class="ci-note">We respond within 4 hours on business days</div></div>
         </div>
         <div class="contact-info-card scroll-anim">
           <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -1702,7 +1645,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       <div class="footer-brand">
         <div class="logo" style="color:#fff;margin-bottom:14px" onclick="navigate('home')">
           <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          <span>Care<em>Analytics</em></span>
+          <span>Alice<em>Care Homes</em></span>
         </div>
         <p>Compassionate, professional care coordination for families navigating life's most challenging moments. Founded with heart. Built with excellence.</p>
         <div class="footer-socials">
@@ -1724,19 +1667,19 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       <div class="footer-col">
         <h5>Care Services</h5>
         <ul>
-          <li><a href="#">Companion Care</a></li>
-          <li><a href="#">Medical Nursing</a></li>
-          <li><a href="#">Dementia Support</a></li>
+          <li><a href="#">Elderly Care</a></li>
+          <li><a href="#">Post-Hospital Care</a></li>
           <li><a href="#">Pediatric Care</a></li>
-          <li><a href="#">Overnight Care</a></li>
-          <li><a href="#">Palliative Care</a></li>
+          <li><a href="#">Daily Living Support</a></li>
+          <li><a href="#">Respite Care</a></li>
+          <li><a href="#">Excursions</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
         <ul>
           <li><a href="tel:+18005550000">+1 (800) 555-0000</a></li>
-          <li><a href="mailto:hello@careanalytics.com">hello@careanalytics.com</a></li>
+          <li><a href="mailto:hello@alicecarehomes.com">hello@alicecarehomes.com</a></li>
           <li><a href="#">142 Wellbeing Ave, NY</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
@@ -1744,10 +1687,10 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Care Analytics. All rights reserved.</span>
+      <span>© 2025 Alice Care Homes Limited. All rights reserved.</span>
       <span style="display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.3)">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        CQC Registered · ISO 27001 Certified
+        Ministry of Health · Human Rights Act
       </span>
     </div>
   </div>
@@ -1962,7 +1905,7 @@ async function submitBooking(e) {
   e.preventDefault();
   const btn   = document.getElementById('submitBtn');
   const cfg   = getEmailConfig();
-  const ref   = 'CA-' + Date.now().toString().slice(-6);
+  const ref   = 'ACH-' + Date.now().toString().slice(-6);
 
   // Collect values
   const name      = document.getElementById('bk-name').value.trim();
