@@ -303,22 +303,6 @@ textarea.form-control{resize:vertical;min-height:120px;line-height:1.7}
 .contact-form-wrap h3{font-size:1.35rem;margin-bottom:8px}
 .contact-form-wrap>p{font-size:.88rem;color:var(--text-muted);margin-bottom:28px;line-height:1.7}
 
-/* ── FORMSPREE SETUP BANNER ── */
-.setup-banner{position:fixed;bottom:0;left:0;right:0;z-index:9000;background:#1e293b;color:#fff;padding:14px 20px;font-size:.85rem;line-height:1.6;box-shadow:0 -4px 24px rgba(0,0,0,.25);border-top:3px solid #f59e0b}
-.setup-banner-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.setup-banner strong{color:#fbbf24;font-size:.9rem}
-.setup-banner code{background:rgba(255,255,255,.12);padding:2px 8px;border-radius:5px;font-family:monospace;font-size:.82rem;color:#7ee8e8}
-.setup-banner a{color:#7ee8e8;text-decoration:underline;font-weight:600}
-.setup-steps{display:flex;flex-direction:column;gap:3px;flex:1;min-width:260px}
-.setup-fields{display:grid;grid-template-columns:1fr 1fr auto auto;gap:8px;width:100%;margin-top:10px;align-items:center}
-.setup-input{padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:.82rem;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;width:100%}
-.setup-input:focus{border-color:#7ee8e8}
-.setup-input::placeholder{color:rgba(255,255,255,.4)}
-.setup-save{background:var(--teal);color:#fff;border:none;padding:8px 18px;border-radius:8px;font-weight:700;font-size:.82rem;cursor:pointer;transition:background .2s;white-space:nowrap}
-.setup-save:hover{background:var(--teal-light)}
-.setup-dismiss{background:#f59e0b;color:#1e293b;border:none;padding:8px 18px;border-radius:8px;font-weight:700;font-size:.82rem;cursor:pointer;white-space:nowrap;transition:background .2s}
-.setup-dismiss:hover{background:#fbbf24}
-
 /* ── FOOTER ── */
 footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 28px}
 .footer-inner{max-width:1200px;margin:0 auto}
@@ -411,7 +395,6 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
   .footer-top{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
   .success-modal{padding:32px 22px}
-  .setup-fields{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .values-grid{grid-template-columns:1fr}
@@ -736,55 +719,89 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
     </div>
   </div>
 
-  <section style="background:#fff">
-    <div class="container">
-      <div class="gallery-filters">
-        <button class="filter-btn active" onclick="filterGallery(this,'all')">All</button>
-        <button class="filter-btn" onclick="filterGallery(this,'caregivers')">Our Caregivers</button>
-        <button class="filter-btn" onclick="filterGallery(this,'moments')">Care Moments</button>
-        <button class="filter-btn" onclick="filterGallery(this,'environment')">Environments</button>
-        <button class="filter-btn" onclick="filterGallery(this,'team')">Our Team</button>
+```html
+<section style="background:#fff">
+  <div class="container">
+    <div class="gallery-filters">
+      <button class="filter-btn active" onclick="filterGallery(this,'all')">All</button>
+      <button class="filter-btn" onclick="filterGallery(this,'caregivers')">Our Caregivers</button>
+      <button class="filter-btn" onclick="filterGallery(this,'moments')">Care Moments</button>
+      <button class="filter-btn" onclick="filterGallery(this,'environment')">Environments</button>
+      <button class="filter-btn" onclick="filterGallery(this,'team')">Our Team</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Caregiver helping an elderly one -->
+      <div class="gallery-item tall" data-cat="caregivers" onclick="openLightbox(0)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image1.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-text">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Caregiver Helping an Elderly Client
+          </div>
+        </div>
       </div>
-      <div class="gallery-grid" id="galleryGrid">
-        <div class="gallery-item tall" data-cat="caregivers" onclick="openLightbox(0)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/7551610/pexels-photo-7551610.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Nurse Maria T.</div></div>
+
+      <div class="gallery-item" data-cat="moments" onclick="openLightbox(1)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image1.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Afternoon Companionship</div></div>
+      </div>
+
+      <div class="gallery-item" data-cat="environment" onclick="openLightbox(2)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image2.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Home Environment</div></div>
+      </div>
+
+      <div class="gallery-item wide" data-cat="team" onclick="openLightbox(3)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image3.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Care Coordination Team</div></div>
+      </div>
+
+      <div class="gallery-item" data-cat="moments" onclick="openLightbox(4)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image4.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Pediatric Care</div></div>
+      </div>
+
+      <div class="gallery-item" data-cat="environment" onclick="openLightbox(5)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image5.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Medical Environment</div></div>
+      </div>
+
+      <!-- Caregiver helping a child with disabilities -->
+      <div class="gallery-item tall" data-cat="caregivers" onclick="openLightbox(6)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image10.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-text">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Caregiver Helping a Child with Disabilities
+          </div>
         </div>
-        <div class="gallery-item" data-cat="moments" onclick="openLightbox(1)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/6646896/pexels-photo-6646896.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Afternoon Companionship</div></div>
-        </div>
-        <div class="gallery-item" data-cat="environment" onclick="openLightbox(2)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/1646807/pexels-photo-1646807.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Home Environment</div></div>
-        </div>
-        <div class="gallery-item wide" data-cat="team" onclick="openLightbox(3)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/5214999/pexels-photo-5214999.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Care Coordination Team</div></div>
-        </div>
-        <div class="gallery-item" data-cat="moments" onclick="openLightbox(4)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/6010881/pexels-photo-6010881.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Pediatric Care</div></div>
-        </div>
-        <div class="gallery-item" data-cat="environment" onclick="openLightbox(5)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/4021810/pexels-photo-4021810.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Medical Environment</div></div>
-        </div>
-        <div class="gallery-item tall" data-cat="caregivers" onclick="openLightbox(6)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/5699448/pexels-photo-5699448.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Dr. Joseph A., RN</div></div>
-        </div>
-        <div class="gallery-item" data-cat="moments" onclick="openLightbox(7)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/6646901/pexels-photo-6646901.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Memory Care</div></div>
-        </div>
-        <div class="gallery-item" data-cat="team" onclick="openLightbox(8)" tabindex="0">
-          <div class="img-wrap" style="background-image:url('https://images.pexels.com/photos/6646916/pexels-photo-6646916.jpeg?auto=compress&cs=tinysrgb&w=600');background-size:cover;background-position:center;"></div>
-          <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Team Training Day</div></div>
+      </div>
+
+      <div class="gallery-item" data-cat="moments" onclick="openLightbox(7)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image9.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Memory Care</div></div>
+      </div>
+
+      <div class="gallery-item" data-cat="team" onclick="openLightbox(8)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image13.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay"><div class="gallery-overlay-text"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Team Training Day</div></div>
+      </div>
+
+      <!-- Round table dining with caregiver and client -->
+      <div class="gallery-item wide" data-cat="moments" onclick="openLightbox(9)" tabindex="0">
+        <div class="img-wrap" style="background-image:url('images/image3.jpeg');background-size:cover;background-position:center;"></div>
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-text">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Round Table Dining with Caregiver and Client
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+```
 
   <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)" role="dialog" aria-modal="true">
     <div class="lightbox-inner">
@@ -814,11 +831,6 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
   <div class="booking-body">
     <div class="booking-layout">
       <div class="booking-form-wrap">
-        <!--
-          FORMSPREE: Replace YOUR_BOOKING_FORM_ID below with your actual Formspree form ID.
-          Sign up free at https://formspree.io → New Form → copy the ID from the endpoint URL.
-          The full action URL looks like: https://formspree.io/f/xpwzabcd
-        -->
         <form id="bookingForm" onsubmit="submitBooking(event)" novalidate>
 
           <div class="form-section-title">About You</div>
@@ -910,9 +922,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
             <label>Additional Notes</label>
             <textarea name="Additional Notes" class="form-control" placeholder="Any other information that would help us find the right match — allergies, languages spoken, mobility requirements, specific routines, pets at home, etc." id="bk-notes" style="min-height:90px"></textarea>
           </div>
-          <!-- Hidden field so Formspree knows this is a booking request -->
           <input type="hidden" name="_subject" value="🏥 New Care Request — Alice Care Homes"/>
-          <!-- Redirect after submission (optional — we handle this in JS instead) -->
           <input type="hidden" name="_next" value=""/>
 
           <div style="display:flex;align-items:flex-start;gap:10px;background:var(--teal-pale);border-radius:10px;padding:13px 15px;margin-bottom:22px;border:1px solid var(--teal-xlight)">
@@ -998,7 +1008,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         </div>
         <div class="contact-info-card scroll-anim">
           <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="ci-label">Email Us</div><div class="ci-value"><a href="mailto:hello@alicecarehomes.com">hello@alicecarehomes.com</a></div><div class="ci-note">We respond within 4 hours on business days</div></div>
+          <div><div class="ci-label">Email Us</div><div class="ci-value"><a href="mailto:alicecarehomes@gmail.com">alicecarehomes@gmail.com</a></div><div class="ci-note">We respond within 4 hours on business days</div></div>
         </div>
         <div class="contact-info-card scroll-anim">
           <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -1018,10 +1028,6 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       <div class="contact-form-wrap">
         <h3>Send Us a Message</h3>
         <p>Not ready to book yet? Have a question? Drop us a message and we'll get back to you personally.</p>
-        <!--
-          FORMSPREE: Replace YOUR_CONTACT_FORM_ID below with your actual Formspree form ID.
-          You can use the same form ID or create a second form for contact messages.
-        -->
         <form id="contactForm" onsubmit="submitContact(event)" novalidate>
           <div class="form-row">
             <div class="form-group">
@@ -1056,7 +1062,6 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
             <label>Your Message <span class="required">*</span></label>
             <textarea name="Message" class="form-control" placeholder="How can we help you? Tell us what's on your mind..." required id="ct-message" style="min-height:140px"></textarea>
           </div>
-          <!-- Hidden Formspree config -->
           <input type="hidden" name="_subject" value="💬 New Contact Message — Alice Care Homes"/>
           <input type="hidden" name="_next" value=""/>
 
@@ -1113,7 +1118,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         <h5>Contact</h5>
         <ul>
           <li><a href="tel:+18005550000">+1 (800) 555-0000</a></li>
-          <li><a href="mailto:hello@alicecarehomes.com">hello@alicecarehomes.com</a></li>
+          <li><a href="mailto:alicecarehomes@gmail.com">alicecarehomes@gmail.com</a></li>
           <li><a href="#">142 Wellbeing Ave, Lagos</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
@@ -1121,7 +1126,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Alice Care Homes Limited. All rights reserved.</span>
+      <span>© 2026 Alice Care Homes LTD. All rights reserved.</span>
       <span style="display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.3)">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Ministry of Health · Human Rights Act
@@ -1129,31 +1134,6 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
     </div>
   </div>
 </footer>
-
-<!-- ═══════════════════
-     FORMSPREE SETUP BANNER
-     This guides you through the one-time setup.
-     Once your Form IDs are saved it disappears permanently.
-═══════════════════ -->
-<div class="setup-banner" id="setupBanner">
-  <div class="setup-banner-inner">
-    <div class="setup-steps">
-      <div><strong>⚡ One-time Formspree Setup — takes 2 minutes, completely free</strong></div>
-      <div style="color:rgba(255,255,255,.75);font-size:.8rem;margin-top:4px">
-        1. Go to <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> and create a free account &nbsp;·&nbsp;
-        2. Click <strong>"New Form"</strong>, name it <em>"Booking"</em> → copy the Form ID (e.g. <code>xpwzabcd</code>) &nbsp;·&nbsp;
-        3. Create a second form named <em>"Contact"</em> → copy its ID &nbsp;·&nbsp;
-        4. Paste both IDs below and click <strong>Save</strong>. Done — emails land directly in your inbox with every field filled in!
-      </div>
-      <div class="setup-fields" style="margin-top:10px">
-        <input class="setup-input" id="fs-booking-id" placeholder="Booking Form ID (e.g. xpwzabcd)" />
-        <input class="setup-input" id="fs-contact-id" placeholder="Contact Form ID (e.g. xrqwerty)" />
-        <button class="setup-save" onclick="saveFormspreeConfig()">Save & Activate →</button>
-        <button class="setup-dismiss" onclick="dismissBanner()">Dismiss</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- TOAST -->
 <div class="toast" id="toast" role="alert">
@@ -1163,43 +1143,12 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
 
 <script>
 // ═══════════════════════════════════════════
-// FORMSPREE CONFIG  — persisted in localStorage
+// FORMSPREE CONFIG — IDs hardcoded directly
+// Booking form ID: xreaopwl
+// Contact form ID: mbdapgva
 // ═══════════════════════════════════════════
-const FS_KEY = 'ach_formspree_config';
-
-function getConfig() {
-  try { return JSON.parse(localStorage.getItem(FS_KEY)) || {}; } catch(e) { return {}; }
-}
-
-function saveFormspreeConfig() {
-  const bookingId = document.getElementById('fs-booking-id').value.trim();
-  const contactId = document.getElementById('fs-contact-id').value.trim();
-  if (!bookingId || !contactId) {
-    showToast('Missing IDs', 'Please enter both Formspree Form IDs.', 'error');
-    return;
-  }
-  localStorage.setItem(FS_KEY, JSON.stringify({ bookingId, contactId }));
-  dismissBanner();
-  showToast('Formspree Connected! ✓', 'Real emails will now be sent on every submission.');
-}
-
-function dismissBanner() {
-  const b = document.getElementById('setupBanner');
-  if (b) b.style.display = 'none';
-}
-
-// Pre-fill or hide banner on load
-(function init() {
-  const cfg = getConfig();
-  if (cfg.bookingId && cfg.contactId) {
-    dismissBanner();
-  } else {
-    if (cfg.bookingId) document.getElementById('fs-booking-id').value = cfg.bookingId;
-    if (cfg.contactId) document.getElementById('fs-contact-id').value = cfg.contactId;
-  }
-  document.getElementById('bk-date').min = new Date().toISOString().split('T')[0];
-})();
-
+const BOOKING_FORM_ID = 'xreaopwl';
+const CONTACT_FORM_ID = 'mbdapgva';
 
 // ═══════════════════
 // NAVIGATION
@@ -1256,17 +1205,18 @@ window.addEventListener('scroll', () => {
   document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
 }, {passive:true});
 
+// Set min date for booking
+document.getElementById('bk-date').min = new Date().toISOString().split('T')[0];
 
 // ═══════════════════════════════════════════
-// BOOKING FORM  — Formspree fetch API
+// BOOKING FORM — sends to Formspree
 // ═══════════════════════════════════════════
 async function submitBooking(e) {
   e.preventDefault();
   const form = document.getElementById('bookingForm');
   const btn  = document.getElementById('submitBtn');
-  const cfg  = getConfig();
 
-  // Client-side validation: must have a care-for selection
+  // Validate care-for radio
   const careFor = document.querySelector('input[name="Care For"]:checked');
   if (!careFor) {
     showToast('Please select', 'Let us know who needs care.', 'error');
@@ -1278,40 +1228,31 @@ async function submitBooking(e) {
 
   const formData = new FormData(form);
 
-  if (cfg.bookingId) {
-    // ── LIVE MODE: send to Formspree ──
-    try {
-      const res = await fetch(`https://formspree.io/f/${cfg.bookingId}`, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-      const json = await res.json();
-      if (res.ok) {
-        onBookingSuccess(document.getElementById('bk-email').value, btn);
-      } else {
-        const errMsg = json.errors ? json.errors.map(e => e.message).join(', ') : 'Unknown error';
-        showToast('Send Failed', errMsg, 'error');
-        btn.disabled = false;
-        btn.textContent = 'Send My Care Request →';
-      }
-    } catch (err) {
-      showToast('Network Error', 'Please check your connection and try again.', 'error');
+  try {
+    const res = await fetch(`https://formspree.io/f/${BOOKING_FORM_ID}`, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    const json = await res.json();
+    if (res.ok) {
+      onBookingSuccess(document.getElementById('bk-email').value, btn);
+    } else {
+      const errMsg = json.errors ? json.errors.map(err => err.message).join(', ') : 'Something went wrong. Please try again.';
+      showToast('Send Failed', errMsg, 'error');
       btn.disabled = false;
       btn.textContent = 'Send My Care Request →';
     }
-  } else {
-    // ── DEMO MODE ──
-    setTimeout(() => {
-      onBookingSuccess(document.getElementById('bk-email').value, btn);
-      showToast('⚠ Demo Mode', 'Add your Formspree IDs above to send real emails.');
-    }, 1200);
+  } catch (err) {
+    showToast('Network Error', 'Please check your connection and try again.', 'error');
+    btn.disabled = false;
+    btn.textContent = 'Send My Care Request →';
   }
 }
 
 function onBookingSuccess(email, btn) {
   document.getElementById('successDetail').textContent =
-    `Your request has been sent. We'll be in touch at ${email} shortly.`;
+    `Your request has been sent. We'll be in touch at alicecarehomes@gmail.com shortly.`;
   document.getElementById('successOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
   document.getElementById('bookingForm').reset();
@@ -1325,15 +1266,13 @@ function closeSuccess() {
   navigate('home');
 }
 
-
 // ═══════════════════════════════════════════
-// CONTACT FORM  — Formspree fetch API
+// CONTACT FORM — sends to Formspree
 // ═══════════════════════════════════════════
 async function submitContact(e) {
   e.preventDefault();
-  const form = document.getElementById('contactForm');
-  const btn  = document.getElementById('ctSubmitBtn');
-  const cfg  = getConfig();
+  const form  = document.getElementById('contactForm');
+  const btn   = document.getElementById('ctSubmitBtn');
   const email = document.getElementById('ct-email').value.trim();
 
   btn.disabled = true;
@@ -1341,38 +1280,27 @@ async function submitContact(e) {
 
   const formData = new FormData(form);
 
-  if (cfg.contactId) {
-    // ── LIVE MODE ──
-    try {
-      const res  = await fetch(`https://formspree.io/f/${cfg.contactId}`, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-      const json = await res.json();
-      if (res.ok) {
-        showToast('Message Sent! ✓', `We'll reply to ${email} within 4 hours.`);
-        form.reset();
-      } else {
-        const errMsg = json.errors ? json.errors.map(e => e.message).join(', ') : 'Unknown error';
-        showToast('Send Failed', errMsg, 'error');
-      }
-    } catch (err) {
-      showToast('Network Error', 'Please check your connection and try again.', 'error');
-    }
-  } else {
-    // ── DEMO MODE ──
-    setTimeout(() => {
+  try {
+    const res  = await fetch(`https://formspree.io/f/${CONTACT_FORM_ID}`, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    const json = await res.json();
+    if (res.ok) {
       showToast('Message Sent! ✓', `We'll reply to ${email} within 4 hours.`);
       form.reset();
-      showToast('⚠ Demo Mode', 'Add your Formspree IDs above to send real emails.');
-    }, 1000);
+    } else {
+      const errMsg = json.errors ? json.errors.map(err => err.message).join(', ') : 'Something went wrong. Please try again.';
+      showToast('Send Failed', errMsg, 'error');
+    }
+  } catch (err) {
+    showToast('Network Error', 'Please check your connection and try again.', 'error');
   }
 
   btn.disabled = false;
   btn.textContent = 'Send Message →';
 }
-
 
 // ═══════════════════
 // GALLERY
@@ -1447,7 +1375,6 @@ document.getElementById('lightbox').addEventListener('touchend', e => {
   if (Math.abs(dx) > 50) lbNav(dx < 0 ? 1 : -1);
 }, {passive:true});
 
-
 // ═══════════════════
 // TOAST
 // ═══════════════════
@@ -1461,7 +1388,6 @@ function showToast(title, msg, type) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => t.classList.remove('show'), 5000);
 }
-
 
 // ═══════════════════
 // SCROLL ANIMATIONS
