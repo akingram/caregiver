@@ -542,6 +542,22 @@ textarea.form-control{resize:vertical;min-height:120px;line-height:1.7}
 .promise-item p{font-size:.83rem;color:var(--text-secondary);line-height:1.65}
 .promise-item strong{display:block;font-size:.86rem;color:var(--text-primary);margin-bottom:2px}
 
+/* Payment overlay */
+.payment-overlay{display:none;position:fixed;inset:0;z-index:8888;background:rgba(5,30,30,.92);backdrop-filter:blur(12px);align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.payment-overlay.open{display:flex;animation:fadeInPage .4s ease}
+.payment-modal{background:#fff;border-radius:var(--radius-xl);padding:48px;max-width:480px;width:100%;text-align:center;box-shadow:var(--shadow-xl);margin:auto}
+.payment-icon{width:76px;height:76px;background:linear-gradient(135deg,var(--teal),var(--teal-light));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;animation:successPop .5s cubic-bezier(0.34,1.56,0.64,1)}
+.payment-icon svg{width:34px;height:34px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round}
+@keyframes successPop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.payment-modal h3{font-size:1.7rem;margin-bottom:11px}
+.payment-modal p{font-size:.92rem;color:var(--text-secondary);line-height:1.8;margin-bottom:24px}
+.payment-amount{background:var(--teal-pale);border-radius:11px;padding:14px 18px;font-size:.85rem;color:var(--teal);font-weight:500;margin-bottom:24px}
+.payment-button{background:linear-gradient(135deg,var(--teal),var(--teal-light));color:#fff;padding:15px 32px;border-radius:12px;font-weight:700;font-size:1rem;width:100%;cursor:pointer;transition:all var(--transition);border:none;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 20px rgba(15,125,126,.35)}
+.payment-button:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(15,125,126,.45)}
+.payment-skip{background:transparent;color:var(--text-muted);font-size:.86rem;padding:12px;cursor:pointer;border:none;margin-top:12px;transition:color var(--transition)}
+.payment-skip:hover{color:var(--text-primary)}
+.payment-email{font-weight:700;color:var(--teal)}
+
 /* ── VISIT BOOKING PAGE ── */
 .visit-page{background:linear-gradient(160deg,var(--sage-light) 0%,#fff 40%)}
 .visit-header{padding:calc(var(--nav-h) + 56px) 20px 0;text-align:center}
@@ -895,7 +911,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       </div>
     </div>
     <!-- Image strip at bottom of hero -->
-    <div class="hero-image-strip">
+    <!-- <div class="hero-image-strip">
       <div class="hero-strip-item">
         <img src="https://images.pexels.com/photos/7551617/pexels-photo-7551617.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Caregiver with elderly patient" loading="lazy"/>
         <div class="hero-strip-caption">Elderly Care & Support</div>
@@ -908,7 +924,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         <img src="https://images.pexels.com/photos/8941857/pexels-photo-8941857.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pediatric care" loading="lazy"/>
         <div class="hero-strip-caption">Pediatric & Family Care</div>
       </div>
-    </div>
+    </div> -->
     <div class="hero-scroll">Scroll<div class="scroll-line"></div></div>
   </section>
 
@@ -990,7 +1006,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       <div class="services-grid">
         <div class="service-card scroll-anim">
           <div class="service-card-img-wrap">
-            <img class="service-card-img" src="https://images.pexels.com/photos/7551617/pexels-photo-7551617.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Elderly care" loading="lazy"/>
+            <img class="service-card-img" src="images/image1.jpeg" alt="Elderly care" loading="lazy"/>
             <div class="service-card-img-overlay"></div>
           </div>
           <div class="service-card-body">
@@ -1001,7 +1017,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         </div>
         <div class="service-card scroll-anim">
           <div class="service-card-img-wrap">
-            <img class="service-card-img" src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Post-hospital care" loading="lazy"/>
+            <img class="service-card-img" src="images/image2.jpeg" alt="Post-hospital care" loading="lazy"/>
             <div class="service-card-img-overlay"></div>
           </div>
           <div class="service-card-body">
@@ -1012,7 +1028,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         </div>
         <div class="service-card scroll-anim">
           <div class="service-card-img-wrap">
-            <img class="service-card-img" src="https://images.pexels.com/photos/8941857/pexels-photo-8941857.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pediatric care" loading="lazy"/>
+            <img class="service-card-img" src="images/image11.jpeg" alt="Pediatric care" loading="lazy"/>
             <div class="service-card-img-overlay"></div>
           </div>
           <div class="service-card-body">
@@ -1023,7 +1039,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
         </div>
         <div class="service-card scroll-anim">
           <div class="service-card-img-wrap">
-            <img class="service-card-img" src="https://images.pexels.com/photos/4052198/pexels-photo-4052198.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Daily living support" loading="lazy"/>
+            <img class="service-card-img" src="images/image9.jpeg" alt="Daily living support" loading="lazy"/>
             <div class="service-card-img-overlay"></div>
           </div>
           <div class="service-card-body">
@@ -1101,21 +1117,21 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       </div>
       <div class="team-photos-row">
         <div class="team-photo-item scroll-anim">
-          <img src="https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Caregiver nurse" loading="lazy"/>
+          <img src="images/image12.jpeg" alt="Caregiver nurse" loading="lazy"/>
           <div class="team-photo-overlay">
             <div class="team-photo-name">Certified Nurse</div>
             <div class="team-photo-role">Elderly & Post-Op Care</div>
           </div>
         </div>
         <div class="team-photo-item scroll-anim">
-          <img src="https://images.pexels.com/photos/5327580/pexels-photo-5327580.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Care specialist" loading="lazy"/>
+          <img src="images/image7.jpeg" alt="Care specialist" loading="lazy"/>
           <div class="team-photo-overlay">
             <div class="team-photo-name">Care Coordinator</div>
             <div class="team-photo-role">Family Support Specialist</div>
           </div>
         </div>
         <div class="team-photo-item scroll-anim">
-          <img src="https://images.pexels.com/photos/4098778/pexels-photo-4098778.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Pediatric specialist" loading="lazy"/>
+          <img src="images/image11.jpeg" alt="Pediatric specialist" loading="lazy"/>
           <div class="team-photo-overlay">
             <div class="team-photo-name">Pediatric Specialist</div>
             <div class="team-photo-role">Children & Autism Care</div>
@@ -1142,11 +1158,11 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
       </div>
       <div class="facility-grid">
         <div class="facility-item span-rows scroll-anim">
-          <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Comfortable care room" loading="lazy"/>
+          <img src="images/image6.jpeg" alt="Comfortable care room" loading="lazy"/>
           <div class="facility-label">Home Care Setting</div>
         </div>
         <div class="facility-item scroll-anim">
-          <img src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Medical care environment" loading="lazy"/>
+          <img src="images/image1.jpeg" alt="Medical care environment" loading="lazy"/>
           <div class="facility-label">Medical Grade Care</div>
         </div>
         <div class="facility-item scroll-anim">
@@ -1562,14 +1578,18 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.7);padding:64px 20px 2
     </div>
   </div>
 
-  <div class="success-overlay" id="successOverlay">
-    <div class="success-modal">
-      <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <h3>Request Received!</h3>
-      <p>Thank you for reaching out to Alice Care Homes. Your request has been received and our care team is already reviewing it.</p>
-      <div class="success-detail" id="successDetail">A confirmation has been sent to your email address.</div>
-      <p style="font-size:.86rem;color:var(--text-muted);margin-bottom:22px;line-height:1.75">A dedicated care coordinator will contact you <strong>within 2 hours</strong> to discuss your needs personally.</p>
-      <button class="success-close" onclick="closeSuccess()">Back to Home</button>
+  <!-- Payment overlay -->
+  <div class="payment-overlay" id="paymentOverlay">
+    <div class="payment-modal">
+      <div class="payment-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+      <h3>Complete Your Booking</h3>
+      <p>Your care request has been received. To confirm your booking, please complete the payment via Paystack.</p>
+      <div class="payment-amount" id="paymentEmail">A confirmation has been sent to <span class="payment-email"></span></div>
+      <a href="https://paystack.shop/pay/alicecarehomes" target="_blank" class="payment-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Pay with Paystack
+      </a>
+      <button class="payment-skip" onclick="closePayment()">I'll pay later</button>
     </div>
   </div>
 
@@ -2138,17 +2158,16 @@ async function submitBooking(e) {
 }
 
 function onBookingSuccess(email, btn) {
-  document.getElementById('successDetail').textContent =
-    `Your request has been sent. We'll be in touch at ${email} shortly.`;
-  document.getElementById('successOverlay').classList.add('open');
+  document.getElementById('paymentEmail').innerHTML = `A confirmation has been sent to <span class="payment-email">${email}</span>`;
+  document.getElementById('paymentOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
   document.getElementById('bookingForm').reset();
   btn.disabled = false;
   btn.textContent = 'Send My Care Request →';
 }
 
-function closeSuccess() {
-  document.getElementById('successOverlay').classList.remove('open');
+function closePayment() {
+  document.getElementById('paymentOverlay').classList.remove('open');
   document.body.style.overflow = '';
   navigate('home');
 }
